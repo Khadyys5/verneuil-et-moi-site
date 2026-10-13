@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verneuil et moi – Application de suivi de la maladie de Verneuil</title>
+<meta name="description" content="Application gratuite pour suivre vos poussées de maladie de Verneuil (hidradénite suppurée) et préparer vos consultations. Sans compte, sans collecte de données.">
+<meta name="theme-color" content="#2A1B5C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Verneuil et moi – Application de suivi de la maladie de Verneuil">
+<meta property="og:description" content="Un journal personnel pour suivre vos poussées et préparer vos consultations. Gratuite, sans compte, sans collecte de données.">
+<meta property="og:image" content="https://verneuil-et-moi-site.vercel.app/hero.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://verneuil-et-moi-site.vercel.app/">
+<link rel="canonical" href="https://verneuil-et-moi-site.vercel.app/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Verneuil et moi","operatingSystem":"iOS","applicationCategory":"HealthApplication","description":"Journal personnel pour suivre les poussées de maladie de Verneuil (hidradénite suppurée) et préparer les consultations.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","ar","es"],"downloadUrl":"https://apps.apple.com/app/id6809023842"}
+</script>
+<style>
+@font-face{font-family:Poppins;src:url(Poppins-Medium.woff) format("woff");font-weight:500;font-display:swap}
+@font-face{font-family:Poppins;src:url(Poppins-Bold.woff) format("woff");font-weight:700;font-display:swap}
+:root{--navy:#2A1B5C;--txt:#3b2c6e;--soft:#5a4a86;--violet:#7A52E0;--bg:#FBF7F4;--lav:#F1EBFC;--line:#e7ddf3}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;font-weight:500;background:var(--bg);color:var(--txt);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--navy)}
+.logo img{width:36px;height:36px;border-radius:10px}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;font-size:14px;align-items:center}
+.pill{background:var(--navy);color:#fff;border-radius:12px;padding:10px 18px;font-weight:700;font-size:14px;white-space:nowrap}
+.hero{margin:18px auto 0;border-radius:26px;overflow:hidden;min-height:430px;background:#f4e6d6 url(hero.jpg) right center/cover no-repeat;display:flex;align-items:center}
+.hero .t{padding:48px 44px;max-width:540px}
+h1{font-size:46px;line-height:1.12;color:var(--navy);font-weight:700;margin-bottom:14px}
+.lead{font-size:18px;color:var(--txt);margin-bottom:24px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border-radius:14px;padding:13px 24px;font-weight:700;font-size:17px}
+.store svg{width:22px;height:22px;fill:#fff}
+.free{margin-top:14px;font-size:14px;color:var(--soft)}
+.bar{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--lav);border-radius:14px;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--navy);text-align:center}
+.bar b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--violet);color:#fff;font-size:13px;flex:none}
+section{padding:42px 0 8px}
+h2{font-size:32px;line-height:1.2;color:var(--navy);font-weight:700}
+.sub{color:var(--soft);margin:4px 0 24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.f{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.ic{width:46px;height:46px;border-radius:50%;background:var(--lav);display:grid;place-items:center;margin-bottom:12px}
+.ic svg{width:22px;height:22px;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.f h3{font-size:16px;color:var(--navy);margin-bottom:4px}.f p{font-size:14px;color:var(--soft)}
+.rep{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{display:grid;grid-template-columns:42% 1fr;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.c img{width:100%;height:100%;object-fit:cover;min-height:190px;display:block}
+.c div{padding:20px 22px}.c h3{font-size:18px;color:var(--navy);margin-bottom:6px}.c p{font-size:14px;color:var(--txt)}
+.faq{display:grid;grid-template-columns:.8fr 1.4fr;gap:30px;align-items:start}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:15px}
+summary::-webkit-details-marker{display:none}summary::after{content:"⌄";color:var(--soft)}
+details[open] summary::after{content:"⌃"}details p{margin-top:8px;font-size:14.5px;color:var(--txt)}
+.cta{margin-top:50px;background:linear-gradient(135deg,#4B2A8F,#2A1B5C 70%);color:#fff;text-align:center;padding:48px 20px}
+.cta h2{color:#fff;font-size:34px;margin-bottom:20px}.cta .store{background:#fff;color:var(--navy)}.cta .store svg{fill:var(--navy)}
+footer{padding:22px 0 34px;font-size:13px;color:var(--soft)}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:860px){
+ .nav ul li:not(:last-child){display:none}
+ .hero{background:#f4e6d6;flex-direction:column;align-items:stretch;border-radius:22px}
+ .hero .t{padding:30px 22px 8px}.store{font-size:15px;padding:12px 18px;white-space:nowrap}
+ .hero::after{content:"";display:block;height:340px;background:url(hero-mobile.jpg) center bottom/cover}
+ h1{font-size:31px}h2{font-size:26px}
+ .g4,.rep,.faq{grid-template-columns:1fr}
+ .c{grid-template-columns:1fr}.c img{height:190px}
+ .cta h2{font-size:26px}
+}
+</style>
+</head>
+<body>
+<header><div class="w nav">
+ <a class="logo" href="#"><img src="icon-512.png" alt="Icône de l'application Verneuil et moi">Verneuil et moi</a>
+ <ul><li><a href="#application">L'application</a></li><li><a href="#reperes">Repères</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a class="pill" href="https://apps.apple.com/app/id6809023842">App Store</a></li></ul>
+</div></header>
+<main class="w">
+<div class="hero" role="img" aria-label="Deux téléphones affichant l'application Verneuil et moi">
+ <div class="t">
+  <h1>Votre quotidien avec Verneuil, en un seul endroit.</h1>
+  <p class="lead">Un journal personnel pour suivre vos poussées et préparer vos consultations.</p>
+  <a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a>
+  <p class="free">Gratuite · Sans compte · Sans collecte de données</p>
+ </div>
+</div>
+<div class="bar"><b>i</b>L'application observe et ne diagnostique pas. Pour toute question médicale, consultez votre médecin.</div>
+
+<section id="application">
+ <h2>Garder une trace, à votre rythme.</h2>
+ <p class="sub">Quatre fonctions, pas une de plus.</p>
+ <div class="g4">
+  <div class="f"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg></div><h3>Carte du corps</h3><p>Repérez les zones concernées sur un schéma simple.</p></div>
+  <div class="f"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg></div><h3>Historique</h3><p>Enregistrez vos poussées et vos ressentis, simplement.</p></div>
+  <div class="f"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></div><h3>Statistiques</h3><p>Visualisez l'évolution de vos poussées au fil du temps.</p></div>
+  <div class="f"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Résumé imprimable</h3><p>Un récapitulatif clair à partager avec votre médecin, si vous le souhaitez.</p></div>
+ </div>
+</section>
+
+<section id="reperes">
+ <h2>Des repères pour vivre avec la maladie.</h2>
+ <p class="sub">Quatre idées simples, en quelques lignes.</p>
+ <div class="rep">
+  <article class="c"><img src="consultation.jpg" alt="Une main écrit une liste de questions dans un carnet à spirale" loading="lazy"><div><h3>Préparer sa consultation</h3><p>Notez les dates, les zones et la douleur de 0 à 10. Écrivez vos trois questions les plus importantes en haut de la page. Apportez vos ordonnances et vos comptes rendus. Vous avez le droit de demander de répéter ou de reformuler.</p></div></article>
+  <article class="c"><img src="journal.jpg" alt="Un carnet ouvert avec un stylo sur une table" loading="lazy"><div><h3>Tenir un journal</h3><p>Une ou deux lignes par poussée suffisent. Choisissez un moment fixe, le soir par exemple. Un jour sans rien à noter est aussi une information. Mieux vaut peu, mais régulièrement.</p></div></article>
+  <article class="c"><img src="stades.jpg" alt="Un médecin explique un document à un patient" loading="lazy"><div><h3>Comprendre les stades</h3><p>Les médecins décrivent souvent la maladie en plusieurs stades, selon l'étendue des lésions. Ces mots peuvent sembler difficiles. Seul votre médecin peut dire où vous en êtes. Demandez-lui de vous expliquer ce que cela change pour vous.</p></div></article>
+  <article class="c"><img src="sommeil.jpg" alt="Un verre d'eau et un réveil sur une table de nuit" loading="lazy"><div><h3>Sommeil, stress, hydratation</h3><p>Notez-les simplement, sans chercher de cause. Ce sont des repères, pas des règles. Votre médecin lira l'ensemble avec vous.</p></div></article>
+ </div>
+ <div class="bar"><b>i</b>Ces repères ne remplacent pas un avis médical.</div>
+</section>
+
+<section id="faq">
+ <div class="faq">
+  <h2>Vos questions, simplement.</h2>
+  <div>
+   <details open><summary>Est-ce un outil médical ?</summary><p>Non. C'est un journal d'observation personnel. Il ne pose aucun diagnostic et ne remplace pas une consultation.</p></details>
+   <details><summary>Où vont mes données ?</summary><p>Nulle part. Elles restent sur votre téléphone. Il n'y a ni compte, ni serveur, ni publicité, ni mesure d'audience.</p></details>
+   <details><summary>Est-elle vraiment gratuite ?</summary><p>Oui, sans compte et sans publicité.</p></details>
+   <details><summary>Puis-je la montrer à mon médecin ?</summary><p>Oui. Vous pouvez enregistrer un résumé en PDF ou l'imprimer, et le partager si vous le souhaitez.</p></details>
+   <details><summary>Dans quelles langues est-elle disponible ?</summary><p>En français, en anglais, en arabe et en espagnol.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<div class="cta"><h2>Votre journal. Vos données. Votre rythme.</h2>
+<a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a></div>
+<footer id="contact"><div class="w"><span>Verneuil et moi · <a href="privacy.html">Politique de confidentialité</a> · <a href="mailto:verneuiletmoi@gmail.com">verneuiletmoi@gmail.com</a></span><span>L'application observe, ne diagnostique pas. Parlez-en à votre médecin.</span></div></footer>
+</body>
+</html>
