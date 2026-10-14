@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://verneuil-et-moi-site.vercel.app/sitemap.xml
