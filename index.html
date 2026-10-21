@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Verneuil et moi – Application de suivi de la maladie de Verneuil</title>
-<meta name="description" content="Application gratuite pour suivre vos poussées de maladie de Verneuil (hidradénite suppurée) et préparer vos consultations. Sans compte, sans collecte de données.">
+<meta name="description" content="Application gratuite pour suivre vos poussées de maladie de Verneuil (hidradénite suppurée) et préparer vos consultations. Disponible sur l'App Store et Google Play. Sans compte, sans collecte de données.">
 <meta name="theme-color" content="#2A1B5C">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Verneuil et moi – Application de suivi de la maladie de Verneuil">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","name":"Verneuil et moi","operatingSystem":"iOS","applicationCategory":"HealthApplication","description":"Journal personnel pour suivre les poussées de maladie de Verneuil (hidradénite suppurée) et préparer les consultations.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","ar","es"],"downloadUrl":"https://apps.apple.com/app/id6809023842"}
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Verneuil et moi","operatingSystem":"iOS, Android","applicationCategory":"HealthApplication","description":"Journal personnel pour suivre les poussées de maladie de Verneuil (hidradénite suppurée) et préparer les consultations.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","ar","es"],"downloadUrl":["https://apps.apple.com/app/id6809023842","https://play.google.com/store/apps/details?id=com.verneuiletmoi.app"]}
 </script>
 <style>
 @font-face{font-family:Poppins;src:url(Poppins-Medium.woff) format("woff");font-weight:500;font-display:swap}
@@ -34,11 +34,12 @@ header{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur
 .nav ul{display:flex;gap:26px;list-style:none;padding:0;font-size:14px;align-items:center}
 .pill{background:var(--navy);color:#fff;border-radius:12px;padding:10px 18px;font-weight:700;font-size:14px;white-space:nowrap}
 .hero{margin:18px auto 0;border-radius:26px;overflow:hidden;min-height:430px;background:#f4e6d6 url(hero.jpg) right center/cover no-repeat;display:flex;align-items:center}
-.hero .t{padding:48px 44px;max-width:540px}
+.hero .t{padding:48px 44px;max-width:600px}
 h1{font-size:46px;line-height:1.12;color:var(--navy);font-weight:700;margin-bottom:14px}
 .lead{font-size:18px;color:var(--txt);margin-bottom:24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
 .store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border-radius:14px;padding:13px 24px;font-weight:700;font-size:17px}
-.store svg{width:22px;height:22px;fill:#fff}
+.store svg{width:22px;height:22px;fill:#fff;flex:none}
 .free{margin-top:14px;font-size:14px;color:var(--soft)}
 .bar{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--lav);border-radius:14px;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--navy);text-align:center}
 .bar b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--violet);color:#fff;font-size:13px;flex:none}
@@ -60,13 +61,15 @@ summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display
 summary::-webkit-details-marker{display:none}summary::after{content:"⌄";color:var(--soft)}
 details[open] summary::after{content:"⌃"}details p{margin-top:8px;font-size:14.5px;color:var(--txt)}
 .cta{margin-top:50px;background:linear-gradient(135deg,#4B2A8F,#2A1B5C 70%);color:#fff;text-align:center;padding:48px 20px}
-.cta h2{color:#fff;font-size:34px;margin-bottom:20px}.cta .store{background:#fff;color:var(--navy)}.cta .store svg{fill:var(--navy)}
+.cta h2{color:#fff;font-size:34px;margin-bottom:20px}.cta .btns{justify-content:center}.cta .store{background:#fff;color:var(--navy)}.cta .store svg{fill:var(--navy)}
 footer{padding:22px 0 34px;font-size:13px;color:var(--soft)}
 footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:860px){
  .nav ul li:not(:last-child){display:none}
  .hero{background:#f4e6d6;flex-direction:column;align-items:stretch;border-radius:22px}
  .hero .t{padding:30px 22px 8px}.store{font-size:15px;padding:12px 18px;white-space:nowrap}
+ .hero .btns{flex-direction:column;align-items:flex-start}
+ .cta .btns{flex-direction:column;align-items:center}
  .hero::after{content:"";display:block;height:340px;background:url(hero-mobile.jpg) center bottom/cover}
  h1{font-size:31px}h2{font-size:26px}
  .g4,.rep,.faq{grid-template-columns:1fr}
@@ -78,14 +81,17 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <body>
 <header><div class="w nav">
  <a class="logo" href="#"><img src="icon-512.png" alt="Icône de l'application Verneuil et moi">Verneuil et moi</a>
- <ul><li><a href="#application">L'application</a></li><li><a href="#reperes">Repères</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a class="pill" href="https://apps.apple.com/app/id6809023842">App Store</a></li></ul>
+ <ul><li><a href="#application">L'application</a></li><li><a href="#reperes">Repères</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a class="pill" href="#telecharger">Télécharger</a></li></ul>
 </div></header>
 <main class="w">
 <div class="hero" role="img" aria-label="Deux téléphones affichant l'application Verneuil et moi">
  <div class="t">
   <h1>Votre quotidien avec Verneuil, en un seul endroit.</h1>
   <p class="lead">Un journal personnel pour suivre vos poussées et préparer vos consultations.</p>
-  <a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a>
+  <div class="btns">
+   <a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a>
+   <a class="store" href="https://play.google.com/store/apps/details?id=com.verneuiletmoi.app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>Télécharger sur Google Play</a>
+  </div>
   <p class="free">Gratuite · Sans compte · Sans collecte de données</p>
  </div>
 </div>
@@ -121,6 +127,7 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
    <details open><summary>Est-ce un outil médical ?</summary><p>Non. C'est un journal d'observation personnel. Il ne pose aucun diagnostic et ne remplace pas une consultation.</p></details>
    <details><summary>Où vont mes données ?</summary><p>Nulle part. Elles restent sur votre téléphone. Il n'y a ni compte, ni serveur, ni publicité, ni mesure d'audience.</p></details>
    <details><summary>Est-elle vraiment gratuite ?</summary><p>Oui, sans compte et sans publicité.</p></details>
+   <details><summary>Où la télécharger ?</summary><p>Sur l'App Store pour iPhone et sur Google Play pour Android.</p></details>
    <details><summary>Puis-je la montrer à mon médecin ?</summary><p>Oui. Vous pouvez enregistrer un résumé en PDF ou l'imprimer, et le partager si vous le souhaitez.</p></details>
    <details><summary>Dans quelles langues est-elle disponible ?</summary><p>En français, en anglais, en arabe et en espagnol.</p></details>
   </div>
@@ -128,8 +135,11 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 </main>
 
-<div class="cta"><h2>Votre journal. Vos données. Votre rythme.</h2>
-<a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a></div>
+<div class="cta" id="telecharger"><h2>Votre journal. Vos données. Votre rythme.</h2>
+<div class="btns">
+ <a class="store" href="https://apps.apple.com/app/id6809023842"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Télécharger dans l'App Store</a>
+ <a class="store" href="https://play.google.com/store/apps/details?id=com.verneuiletmoi.app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>Télécharger sur Google Play</a>
+</div></div>
 <footer id="contact"><div class="w"><span>Verneuil et moi · <a href="privacy.html">Politique de confidentialité</a> · <a href="mailto:verneuiletmoi@gmail.com">verneuiletmoi@gmail.com</a></span><span>L'application observe, ne diagnostique pas. Parlez-en à votre médecin.</span></div></footer>
 </body>
 </html>
